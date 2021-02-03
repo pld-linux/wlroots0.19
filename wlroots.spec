@@ -6,6 +6,7 @@ License:	MIT
 Group:		Libraries
 Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	bc9dbfef37385dbe0f4fe129d2329be5
+Patch0:		x32.patch
 URL:		https://github.com/swaywm/wlroots
 BuildRequires:	EGL-devel
 BuildRequires:	Mesa-libgbm-devel >= 17.1.0
@@ -84,6 +85,9 @@ Static wlroots library.
 
 %prep
 %setup -q
+%ifarch x32
+%patch0 -p1
+%endif
 
 %build
 %meson build
