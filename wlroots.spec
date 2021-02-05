@@ -85,9 +85,7 @@ Static wlroots library.
 
 %prep
 %setup -q
-%ifarch x32
 %patch0 -p1
-%endif
 
 %build
 %meson build
