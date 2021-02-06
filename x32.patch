@@ -4,7 +4,7 @@
  	clock_gettime(CLOCK_MONOTONIC, &ts);
  	timespec_sub(&ts, &ts, &start_time);
  
-+#ifdef __ILP32__
++#if defined(__x86_64__) && defined(__ILP32__)
 +	fprintf(stderr, "%02d:%02d:%02d.%03lld ", (int)(ts.tv_sec / 60 / 60),
 +#else
  	fprintf(stderr, "%02d:%02d:%02d.%03ld ", (int)(ts.tv_sec / 60 / 60),
