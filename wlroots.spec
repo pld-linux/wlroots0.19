@@ -1,33 +1,34 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.12.0
+Version:	0.13.0
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	bc9dbfef37385dbe0f4fe129d2329be5
+# Source0-md5:	614bfd6dfb47e86699d0215646519ad6
 Patch0:		x32.patch
 URL:		https://github.com/swaywm/wlroots
 BuildRequires:	EGL-devel
 BuildRequires:	Mesa-libgbm-devel >= 17.1.0
 BuildRequires:	OpenGLESv2-devel
 BuildRequires:	libdrm-devel >= 2.4.95
-BuildRequires:	libinput-devel >= 1.9.0
+BuildRequires:	libinput-devel >= 1.14.0
+BuildRequires:	libuuid-devel
 BuildRequires:	libxcb-devel
-BuildRequires:	meson >= 0.54.0
+BuildRequires:	meson >= 0.56.0
 BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	systemd-devel >= 237
 BuildRequires:	udev-devel
-BuildRequires:	wayland-devel >= 1.18
+BuildRequires:	wayland-devel >= 1.19
 BuildRequires:	wayland-protocols >= 1.17
 BuildRequires:	xcb-util-wm-devel
 BuildRequires:	xorg-lib-libxkbcommon-devel
 Requires:	Mesa-libgbm >= 17.1.0
 Requires:	libdrm >= 2.4.95
-Requires:	libinput >= 1.9.0
+Requires:	libinput >= 1.14.0
 Requires:	wayland >= 1.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -62,12 +63,12 @@ Requires:	EGL-devel
 Requires:	Mesa-libgbm-devel >= 17.1.0
 Requires:	OpenGLESv2-devel
 Requires:	libdrm-devel >= 2.4.95
-Requires:	libinput-devel >= 1.9.0
+Requires:	libinput-devel >= 1.14.0
 Requires:	libxcb-devel
 Requires:	pixman-devel
 Requires:	systemd-devel >= 237
 Requires:	udev-devel
-Requires:	wayland-devel >= 1.18
+Requires:	wayland-devel >= 1.19
 Requires:	wayland-protocols >= 1.17
 Requires:	xcb-util-wm-devel
 Requires:	xorg-lib-libxkbcommon-devel
@@ -104,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CONTRIBUTING.md README.md
-%attr(755,root,root) %{_libdir}/libwlroots.so.7
+%attr(755,root,root) %{_libdir}/libwlroots.so.8
 
 %files devel
 %defattr(644,root,root,755)
