@@ -1,35 +1,35 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.13.0
-Release:	2
+Version:	0.14.0
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	614bfd6dfb47e86699d0215646519ad6
+# Source0-md5:	fc11a92b1146cea314a555be774fadb2
 Patch0:		x32.patch
 URL:		https://github.com/swaywm/wlroots
 BuildRequires:	EGL-devel
-BuildRequires:	Mesa-libgbm-devel >= 17.1.0
+BuildRequires:	Mesa-libgbm-devel >= 21.1.0
 BuildRequires:	OpenGLESv2-devel
 BuildRequires:	libdrm-devel >= 2.4.95
 BuildRequires:	libinput-devel >= 1.14.0
-BuildRequires:	libuuid-devel
+BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
 BuildRequires:	meson >= 0.56.0
 BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
-BuildRequires:	systemd-devel >= 237
 BuildRequires:	udev-devel
 BuildRequires:	wayland-devel >= 1.19
-BuildRequires:	wayland-protocols >= 1.17
+BuildRequires:	wayland-protocols >= 1.21
 BuildRequires:	xcb-util-wm-devel
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xorg-xserver-Xwayland-devel
-Requires:	Mesa-libgbm >= 17.1.0
+Requires:	Mesa-libgbm >= 21.1.0
 Requires:	libdrm >= 2.4.95
 Requires:	libinput >= 1.14.0
+Requires:	libseat-devel >= 0.2.0
 Requires:	wayland >= 1.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,7 +61,7 @@ Summary:	Header files for wlroots library
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	EGL-devel
-Requires:	Mesa-libgbm-devel >= 17.1.0
+Requires:	Mesa-libgbm-devel >= 21.1.0
 Requires:	OpenGLESv2-devel
 Requires:	libdrm-devel >= 2.4.95
 Requires:	libinput-devel >= 1.14.0
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CONTRIBUTING.md README.md
-%attr(755,root,root) %{_libdir}/libwlroots.so.8
+%attr(755,root,root) %{_libdir}/libwlroots.so.9
 
 %files devel
 %defattr(644,root,root,755)
