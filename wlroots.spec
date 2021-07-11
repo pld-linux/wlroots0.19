@@ -1,17 +1,17 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.14.0
+Version:	0.14.1
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	fc11a92b1146cea314a555be774fadb2
+# Source0-md5:	3fbe8f81d2ba59362f041940869ed1e2
 Patch0:		x32.patch
 URL:		https://github.com/swaywm/wlroots
 BuildRequires:	EGL-devel
 BuildRequires:	Mesa-libgbm-devel >= 21.1.0
 BuildRequires:	OpenGLESv2-devel
-BuildRequires:	libdrm-devel >= 2.4.95
+BuildRequires:	libdrm-devel >= 2.4.105
 BuildRequires:	libinput-devel >= 1.14.0
 BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
@@ -27,7 +27,7 @@ BuildRequires:	xcb-util-wm-devel
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xorg-xserver-Xwayland-devel
 Requires:	Mesa-libgbm >= 21.1.0
-Requires:	libdrm >= 2.4.95
+Requires:	libdrm >= 2.4.105
 Requires:	libinput >= 1.14.0
 Requires:	libseat-devel >= 0.2.0
 Requires:	wayland >= 1.18
@@ -63,7 +63,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	EGL-devel
 Requires:	Mesa-libgbm-devel >= 21.1.0
 Requires:	OpenGLESv2-devel
-Requires:	libdrm-devel >= 2.4.95
+Requires:	libdrm-devel >= 2.4.105
 Requires:	libinput-devel >= 1.14.0
 Requires:	libxcb-devel
 Requires:	pixman-devel
