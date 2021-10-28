@@ -1,7 +1,7 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
 Version:	0.14.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries
 Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
@@ -29,7 +29,7 @@ BuildRequires:	xorg-xserver-Xwayland-devel
 Requires:	Mesa-libgbm >= 21.1.0
 Requires:	libdrm >= 2.4.105
 Requires:	libinput >= 1.14.0
-Requires:	libseat-devel >= 0.2.0
+Requires:	libseat >= 0.2.0
 Requires:	wayland >= 1.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
