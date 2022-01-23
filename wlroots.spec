@@ -1,36 +1,41 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.14.1
-Release:	2
+Version:	0.15.0
+Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://github.com/swaywm/wlroots/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	3fbe8f81d2ba59362f041940869ed1e2
+Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.0/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	7398594cc491fa829f9506f77e097ab2
 Patch0:		x32.patch
-URL:		https://github.com/swaywm/wlroots
+URL:		https://gitlab.freedesktop.org/wlroots/wlroots
 BuildRequires:	EGL-devel
 BuildRequires:	Mesa-libgbm-devel >= 21.1.0
 BuildRequires:	OpenGLESv2-devel
-BuildRequires:	libdrm-devel >= 2.4.105
-BuildRequires:	libinput-devel >= 1.14.0
+BuildRequires:	Vulkan-Loader-devel >= 1.2.182
+BuildRequires:	glslang >= 11.0.0
+BuildRequires:	libdrm-devel >= 2.4.109
+BuildRequires:	libinput-devel >= 1.19.0
 BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
-BuildRequires:	meson >= 0.56.0
+BuildRequires:	meson >= 0.58.1
 BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	udev-devel
-BuildRequires:	wayland-devel >= 1.19
-BuildRequires:	wayland-protocols >= 1.21
+BuildRequires:	wayland-devel >= 1.20
+BuildRequires:	wayland-protocols >= 1.24
+BuildRequires:	xcb-util-errors-devel
+BuildRequires:	xcb-util-renderutil-devel
 BuildRequires:	xcb-util-wm-devel
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xorg-xserver-Xwayland-devel
 Requires:	Mesa-libgbm >= 21.1.0
-Requires:	libdrm >= 2.4.105
-Requires:	libinput >= 1.14.0
+Requires:	Vulkan-Loader >= 1.2.182
+Requires:	libdrm >= 2.4.109
+Requires:	libinput >= 1.19.0
 Requires:	libseat >= 0.2.0
-Requires:	wayland >= 1.18
+Requires:	wayland >= 1.20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,14 +68,18 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	EGL-devel
 Requires:	Mesa-libgbm-devel >= 21.1.0
 Requires:	OpenGLESv2-devel
-Requires:	libdrm-devel >= 2.4.105
-Requires:	libinput-devel >= 1.14.0
+Requires:	Vulkan-Loader-devel >= 1.2.182
+Requires:	libdrm-devel >= 2.4.109
+Requires:	libinput-devel >= 1.19.0
+Requires:	libseat-devel >= 0.2.0
 Requires:	libxcb-devel
 Requires:	pixman-devel
 Requires:	systemd-devel >= 237
 Requires:	udev-devel
-Requires:	wayland-devel >= 1.19
-Requires:	wayland-protocols >= 1.17
+Requires:	wayland-devel >= 1.20
+Requires:	wayland-protocols >= 1.24
+Requires:	xcb-util-errors-devel
+Requires:	xcb-util-renderutil-devel
 Requires:	xcb-util-wm-devel
 Requires:	xorg-lib-libxkbcommon-devel
 
@@ -107,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CONTRIBUTING.md README.md
-%attr(755,root,root) %{_libdir}/libwlroots.so.9
+%attr(755,root,root) %{_libdir}/libwlroots.so.10
 
 %files devel
 %defattr(644,root,root,755)
