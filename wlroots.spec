@@ -74,7 +74,7 @@ Requires:	libinput-devel >= 1.19.0
 Requires:	libseat-devel >= 0.2.0
 Requires:	libxcb-devel
 Requires:	pixman-devel
-Requires:	systemd-devel >= 237
+Requires:	systemd-devel >= 1:237
 Requires:	udev-devel
 Requires:	wayland-devel >= 1.20
 Requires:	wayland-protocols >= 1.24
