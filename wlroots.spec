@@ -100,6 +100,7 @@ Static wlroots library.
 
 %build
 %meson build \
+	-Dexamples=false \
 	-Dxwayland=enabled
 %ninja_build -C build
 
