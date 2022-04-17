@@ -1,11 +1,11 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.15.0
+Version:	0.15.1
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.0/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	7398594cc491fa829f9506f77e097ab2
+Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/%{name}-%{version}.tar.gz
+# Source0-md5:	d847f52dd4be602918fdfa25e00aef27
 Patch0:		x32.patch
 URL:		https://gitlab.freedesktop.org/wlroots/wlroots
 BuildRequires:	EGL-devel
