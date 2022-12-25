@@ -1,11 +1,11 @@
 Summary:	A modular Wayland compositor library
 Name:		wlroots
-Version:	0.15.1
+Version:	0.16.1
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	d847f52dd4be602918fdfa25e00aef27
+# Source0-md5:	ed53e8538b5773b542ccf3f7de548aeb
 Patch0:		x32.patch
 URL:		https://gitlab.freedesktop.org/wlroots/wlroots
 BuildRequires:	EGL-devel
@@ -13,18 +13,19 @@ BuildRequires:	Mesa-libgbm-devel >= 21.1.0
 BuildRequires:	OpenGLESv2-devel
 BuildRequires:	Vulkan-Loader-devel >= 1.2.182
 BuildRequires:	glslang >= 11.0.0
-BuildRequires:	libdrm-devel >= 2.4.109
+BuildRequires:	hwdata >= 0.364
+BuildRequires:	libdrm-devel >= 2.4.113
 BuildRequires:	libinput-devel >= 1.19.0
 BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
-BuildRequires:	meson >= 0.58.1
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	udev-devel
-BuildRequires:	wayland-devel >= 1.20
-BuildRequires:	wayland-protocols >= 1.24
+BuildRequires:	wayland-devel >= 1.21
+BuildRequires:	wayland-protocols >= 1.27
 BuildRequires:	xcb-util-errors-devel
 BuildRequires:	xcb-util-renderutil-devel
 BuildRequires:	xcb-util-wm-devel
@@ -32,10 +33,10 @@ BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xorg-xserver-Xwayland-devel
 Requires:	Mesa-libgbm >= 21.1.0
 Requires:	Vulkan-Loader >= 1.2.182
-Requires:	libdrm >= 2.4.109
+Requires:	libdrm >= 2.4.113
 Requires:	libinput >= 1.19.0
 Requires:	libseat >= 0.2.0
-Requires:	wayland >= 1.20
+Requires:	wayland >= 1.21
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -69,15 +70,15 @@ Requires:	EGL-devel
 Requires:	Mesa-libgbm-devel >= 21.1.0
 Requires:	OpenGLESv2-devel
 Requires:	Vulkan-Loader-devel >= 1.2.182
-Requires:	libdrm-devel >= 2.4.109
+Requires:	libdrm-devel >= 2.4.113
 Requires:	libinput-devel >= 1.19.0
 Requires:	libseat-devel >= 0.2.0
 Requires:	libxcb-devel
 Requires:	pixman-devel
 Requires:	systemd-devel >= 1:237
 Requires:	udev-devel
-Requires:	wayland-devel >= 1.20
-Requires:	wayland-protocols >= 1.24
+Requires:	wayland-devel >= 1.21
+Requires:	wayland-protocols >= 1.27
 Requires:	xcb-util-errors-devel
 Requires:	xcb-util-renderutil-devel
 Requires:	xcb-util-wm-devel
@@ -117,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CONTRIBUTING.md README.md
-%attr(755,root,root) %{_libdir}/libwlroots.so.10
+%attr(755,root,root) %{_libdir}/libwlroots.so.11
 
 %files devel
 %defattr(644,root,root,755)
