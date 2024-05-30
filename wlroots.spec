@@ -1,4 +1,5 @@
 Summary:	A modular Wayland compositor library
+Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
 Name:		wlroots
 Version:	0.16.2
 Release:	1
@@ -62,8 +63,26 @@ anyway.
   use to avoid writing GL code directly, but which steps out of the way
   when your needs demand custom rendering code.
 
+%description -l pl.UTF-8
+Dołączalne, składalne moduły do tworzenia kompozytora Wayland; albo
+około 50000 linii kodu, który i tak trzeba by napisać. Udostępnia
+m.in.:
+- backendy będące abstrakcją sprzętu wyświetlającego i wejściowego - w
+  tym KMS/DRM, libinput, Wayland, X11 oraz samodzielne, oraz dowolne
+  inne własne backendy, które można tworzyć i niszczyć w czasie
+  działania programu, i wykorzystywać wraz z innymi
+- w większości samodzielne implementacje wielu interfejsów Wayland,
+  zarówno z wayland.xml, jak i różnych rozszerzeń protokołu
+- kilka samodzielnych, opcjonalnych narzędzi, będących implementacją
+  komponentów wspólnych dla wielu kompozytorów, takich jak układanie
+  wyjść w przestrzeni fizycznej
+- abstrakcję Xwayland
+- abstrakcję renderowania, pozwalającą pominąć pisanie bezpośrednio
+  kodu GL
+
 %package devel
 Summary:	Header files for wlroots library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki wlroots
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	EGL-devel
@@ -87,13 +106,20 @@ Requires:	xorg-lib-libxkbcommon-devel
 %description devel
 Header files for wlroots library.
 
+%description devel -l pl.UTF-8
+Pliki nagłówkowe biblioteki wlroots.
+
 %package static
 Summary:	Static wlroots library
+Summary(pl.UTF-8):	Statyczna biblioteka wlroots
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static wlroots library.
+
+%description static -l pl.UTF-8
+Statyczna biblioteka wlroots.
 
 %prep
 %setup -q
@@ -103,6 +129,7 @@ Static wlroots library.
 %meson build \
 	-Dexamples=false \
 	-Dxwayland=enabled
+
 %ninja_build -C build
 
 %install
