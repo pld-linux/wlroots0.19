@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# static library
+
 Summary:	A modular Wayland compositor library
 Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
 Name:		wlroots
@@ -131,6 +135,7 @@ Statyczna biblioteka wlroots.
 
 %build
 %meson build \
+	%{!?with_static_libs:--default-library=shared} \
 	-Dexamples=false \
 	-Dxwayland=enabled
 
@@ -157,6 +162,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/wlr
 %{_pkgconfigdir}/wlroots.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libwlroots.a
+%endif
