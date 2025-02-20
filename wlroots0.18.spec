@@ -4,7 +4,7 @@
 
 Summary:	A modular Wayland compositor library
 Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
-Name:		wlroots
+Name:		wlroots0.18
 Version:	0.17.4
 Release:	1
 License:	MIT
