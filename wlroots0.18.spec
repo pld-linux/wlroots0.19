@@ -9,7 +9,7 @@ Version:	0.18.2
 Release:	1
 License:	MIT
 Group:		Libraries
-Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/%{name}-%{version}.tar.gz
+Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/wlroots-%{version}.tar.gz
 # Source0-md5:	f230118c020e3ac40813823d4156d324
 Patch0:		x32.patch
 URL:		https://gitlab.freedesktop.org/wlroots/wlroots
@@ -132,7 +132,7 @@ Static wlroots library.
 Statyczna biblioteka wlroots.
 
 %prep
-%setup -q
+%setup -q -n wlroots-%{version}
 %patch -P0 -p1
 
 %build
