@@ -4,19 +4,20 @@
 
 Summary:	A modular Wayland compositor library
 Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
-Name:		wlroots0.18
-Version:	0.18.2
-Release:	2
+Name:		wlroots0.19
+Version:	0.19.0
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/wlroots-%{version}.tar.gz
-# Source0-md5:	f230118c020e3ac40813823d4156d324
+# Source0-md5:	c961f8480074c559a85edc3b6c168c73
 Patch0:		x32.patch
 URL:		https://gitlab.freedesktop.org/wlroots/wlroots
 BuildRequires:	EGL-devel
 BuildRequires:	Mesa-libgbm-devel >= 21.1.0
 BuildRequires:	OpenGLESv2-devel
 BuildRequires:	Vulkan-Loader-devel >= 1.2.182
+BuildRequires:	glibc-headers >= 6:2.27
 BuildRequires:	glslang >= 11.0.0
 BuildRequires:	hwdata >= 0.364
 BuildRequires:	lcms2-devel
@@ -26,14 +27,15 @@ BuildRequires:	libinput-devel >= 1.26.0
 BuildRequires:	libliftoff-devel >= 0.4.0
 BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
-BuildRequires:	meson >= 0.59.0
+BuildRequires:	linux-libc-headers >= 7:4.20
+BuildRequires:	meson >= 1.3
 BuildRequires:	ninja
-BuildRequires:	pixman-devel >= 0.42.0
+BuildRequires:	pixman-devel >= 0.43.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	udev-devel
-BuildRequires:	wayland-devel >= 1.23
-BuildRequires:	wayland-protocols >= 1.35
+BuildRequires:	wayland-devel >= 1.23.1
+BuildRequires:	wayland-protocols >= 1.41
 BuildRequires:	xcb-util-errors-devel
 BuildRequires:	xcb-util-renderutil-devel
 BuildRequires:	xcb-util-wm-devel
@@ -45,9 +47,11 @@ Requires:	libdrm >= 2.4.122
 Requires:	libinput >= 1.26.0
 Requires:	libliftoff >= 0.4.0
 Requires:	libseat >= 0.2.0
-Requires:	pixman >= 0.42.0
-Requires:	wayland >= 1.23
+Requires:	pixman >= 0.43.0
+Requires:	wayland >= 1.23.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		filterout_cpp	-DNDEBUG
 
 %description
 Pluggable, composable, unopinionated modules for building a Wayland
@@ -156,15 +160,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CONTRIBUTING.md README.md
-%attr(755,root,root) %{_libdir}/libwlroots-0.18.so
+%attr(755,root,root) %{_libdir}/libwlroots-0.19.so
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/wlroots-0.18
-%{_pkgconfigdir}/wlroots-0.18.pc
+%{_includedir}/wlroots-0.19
+%{_pkgconfigdir}/wlroots-0.19.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libwlroots-0.18.a
+%{_libdir}/libwlroots-0.19.a
 %endif
