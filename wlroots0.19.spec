@@ -5,12 +5,12 @@
 Summary:	A modular Wayland compositor library
 Summary(pl.UTF-8):	Modularna biblioteka kompozytora Wayland
 Name:		wlroots0.19
-Version:	0.19.2
+Version:	0.19.3
 Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/%{version}/downloads/wlroots-%{version}.tar.gz
-# Source0-md5:	818c3bf381e616ce64ca73e1bc923798
+# Source0-md5:	44d70ddf23e0b00e39ca9602f4d8237c
 Patch0:		x32.patch
 URL:		https://gitlab.freedesktop.org/wlroots/wlroots
 BuildRequires:	EGL-devel
@@ -23,7 +23,7 @@ BuildRequires:	hwdata >= 0.364
 BuildRequires:	lcms2-devel
 BuildRequires:	libdisplay-info-devel
 BuildRequires:	libdrm-devel >= 2.4.122
-BuildRequires:	libinput-devel >= 1.26.0
+BuildRequires:	libinput-devel >= 1.31.0
 BuildRequires:	libliftoff-devel >= 0.4.0
 BuildRequires:	libseat-devel >= 0.2.0
 BuildRequires:	libxcb-devel
@@ -44,7 +44,7 @@ BuildRequires:	xorg-xserver-Xwayland-devel
 Requires:	Mesa-libgbm >= 21.1.0
 Requires:	Vulkan-Loader >= 1.2.182
 Requires:	libdrm >= 2.4.122
-Requires:	libinput >= 1.26.0
+Requires:	libinput >= 1.31.0
 Requires:	libliftoff >= 0.4.0
 Requires:	libseat >= 0.2.0
 Requires:	pixman >= 0.43.0
@@ -104,7 +104,7 @@ Requires:	OpenGLESv2-devel
 Requires:	Vulkan-Loader-devel >= 1.2.182
 Requires:	lcms2-devel
 Requires:	libdrm-devel >= 2.4.122
-Requires:	libinput-devel >= 1.26.0
+Requires:	libinput-devel >= 1.31.0
 Requires:	libseat-devel >= 0.2.0
 Requires:	libxcb-devel
 Requires:	pixman-devel >= 0.42.0
